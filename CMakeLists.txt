@@ -30,15 +30,15 @@ endif(COMMAND cmake_policy)
 # define plugin name, owner and versions
 
 SET(VERBOSE_NAME "Openwaterkaart_pi")
-SET(COMMON_NAME "Openwaterkaart")
-SET(TITLE_NAME "Openwaterkaart")
+SET(COMMON_NAME "Openwaterkaart.nl")
+SET(TITLE_NAME "Openwaterkaart.nl")
 SET(PACKAGE_CONTACT "Pim Spithost")
 SET(PACKAGE "openwaterkaart")
 
 SET(VERSION_MAJOR "0")
 SET(VERSION_MINOR "1")
 
-set(VERSION_PATCH "0")
+set(VERSION_PATCH "1")
 set(VERSION_TWEAK "0")
 set(VERSION_DATE "24/10/2020")
 set(OCPN_MIN_VERSION "ov50")
@@ -67,8 +67,8 @@ set(CLOUDSMITH_USER "opencpn")
 set(CLOUDSMITH_BASE_REPOSITORY "dr")
 
 set(XML_INFO_URL "https://www.openwaterkaart.nl")
-set(XML_SUMMARY "Plugin for charts and information from Openwaterkaart")
-set(XML_DESCRIPTION "The Openwaterkaart plugin allows for downloading and integrating Openwaterkaart water charts as well as helpfull information")
+set(XML_SUMMARY "Plugin voor kaarten en informatie Openwaterkaart.nl")
+set(XML_DESCRIPTION "De Openwaterkaart plugin biedt de mogelijkheid om de waterkaarten en nuttige informatielagen te downloaden")
 
 ##
 ## ----- Modify section above to include all the details for your plugin ----- ##

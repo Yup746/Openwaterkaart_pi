@@ -64,9 +64,6 @@ Dlg::Dlg(wxWindow *parent, Openwaterkaart_pi *ppi)
     ccp = {"NL:","BE:","DE:","DK:"}; //configcountryprefix
     xmlurls = {"https://charts.openwaterkaart.nl/OSM-raster-nl/OSM-raster-nl-catalog.xml", "https://charts.openwaterkaart.nl/OSM-raster-be/OSM-raster-be-catalog.xml", "https://charts.openwaterkaart.nl/OSM-raster-de/OSM-raster-de-catalog.xml", "http://charts.openwaterkaart.nl/OSM-raster-dk/OSM-raster-dk-catalog.xml"};
     landstrings = {"Nederlandse", "Belgische", "Duitse", "Deense"};
-    config = new OpenwaterkaartConfig;
-    config->SetConfigPath(configPath.GetFullPath());
-    XMLPath.Assign(m_base_chart_dir, "XML", "xml");
 
     //Als de config nog niet bestaat moet dit het eerste gebruik zijn van de plugin en dan moeten er nog wat voorbereidingen plaatsvinden
     if(!configPath.FileExists()){
@@ -84,6 +81,12 @@ Dlg::Dlg(wxWindow *parent, Openwaterkaart_pi *ppi)
         myChartArray.Add(chartPath.GetFullPath());
         UpdateChartDBInplace(myChartArray, true, true);
     }
+
+	//Hier wordt het configobject geïnitialiseerd
+    config = new OpenwaterkaartConfig;
+    config->SetConfigPath(configPath.GetFullPath());
+    XMLPath.Assign(m_base_chart_dir, "XML", "xml");
+
 
 	//Dit haalt het al bekende mailadres en licentiecode op uit de config en laadt het in de tekstvakken
 	m_mailadress->SetValue(config->GetMailadress());
@@ -182,7 +185,7 @@ void Dlg::OnDownloadCharts( wxCommandEvent& event ){ //Functie voor het download
             //Afsluitende functies
             UpdateChartDBInplace(GetChartDBDirArrayString(), true, false);
             ForceChartDBUpdate();
-            wxMessageBox("De meest recente kaarten zijn gedownload.\nStart OpenCPN eventueel opnieuw op als\nde kaarten nog niet zichtbaar worden.");
+            wxMessageBox("De meest recente kaarten zijn gedownload.\nStart OpenCPN opnieuw op als de\nkaarten niet zichtbaar worden.");
         }else wxMessageBox("Er zijn geen landen gekozen,\nmaak minimaal één keuze.");
         Disconnect(wxEVT_DOWNLOAD_EVENT, (wxObjectEventFunction)(wxEventFunction)&Dlg::onDLEvent);
     }else wxMessageBox("Geen internetverbinding,\nupdaten is niet mogelijk.");
