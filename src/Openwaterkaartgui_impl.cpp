@@ -68,7 +68,7 @@ Dlg::Dlg(wxWindow *parent, Openwaterkaart_pi *ppi)
     //Als de config nog niet bestaat moet dit het eerste gebruik zijn van de plugin en dan moeten er nog wat voorbereidingen plaatsvinden
     if(!configPath.FileExists()){
         //Hier wordt de configfile gemaakt
-        ofstream configcreatestream(configPath.GetFullPath());
+        ofstream configcreatestream(configPath.GetFullPath().mb_str());
         for(int cc = 0; cc < (int)ccp.size(); cc++){
             configcreatestream << ccp[cc] + "00000000\n";
         }

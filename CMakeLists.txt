@@ -12,7 +12,7 @@
 ##
 ## ----- Modify section below to include all the details for your plugin ----- ##
 ##
-
+ADD_DEFINITIONS(-DMAKING_PLUGIN)
 set(CMLOC "CMakeLists: ")
 
 # define minimum cmake version
@@ -38,13 +38,13 @@ SET(PACKAGE "openwaterkaart")
 SET(VERSION_MAJOR "0")
 SET(VERSION_MINOR "1")
 
-set(VERSION_PATCH "1")
+set(VERSION_PATCH "2")
 set(VERSION_TWEAK "0")
-set(VERSION_DATE "24/10/2020")
+set(VERSION_DATE "25/02/2021")
 set(OCPN_MIN_VERSION "ov50")
 set(OCPN_API_VERSION_MAJOR "1")
 set(OCPN_API_VERSION_MINOR "16")
-set(TP_COMMENT "  * Release for O5 using CI")
+set(TP_COMMENT "")
 
 set(PARENT "opencpn")
 #
@@ -62,9 +62,9 @@ set(PROD "prod") # Standard Repos
 set(BETA "beta") # Standard Repos
 set(ALPHA "alpha") # Standard Repos
 
-set(CLOUDSMITH_USER "opencpn")
+set(CLOUDSMITH_USER "")
 # set this if your cloudsmith repository name does not match your git repository name set(CLOUDSMITH_BASE_REPOSITORY "sar")
-set(CLOUDSMITH_BASE_REPOSITORY "dr")
+set(CLOUDSMITH_BASE_REPOSITORY "")
 
 set(XML_INFO_URL "https://www.openwaterkaart.nl")
 set(XML_SUMMARY "Plugin voor kaarten en informatie Openwaterkaart.nl")
